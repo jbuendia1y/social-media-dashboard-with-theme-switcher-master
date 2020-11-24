@@ -28,7 +28,6 @@ const changeTheme = (theme)=>{
 
     for(const styles of customStyles){
         document.documentElement.style.setProperty(styles, theme[styles]);
-        console.log(styles)
     }
 }
 
@@ -39,10 +38,14 @@ switchTheme.addEventListener('click',()=>{
         changeTheme(LightTheme)
         listStyle()
         cont++
+        
+        localTheme('disable')
     }else if(cont == 1){
         changeTheme(DarkTheme)
         listStyle()
         cont--
+
+        localTheme('enable')
     }
 })
 
@@ -52,3 +55,26 @@ const listStyle = ()=>{
     switch__box.classList.toggle('switch__hover')
     switchTheme.parentElement.classList.toggle('active__bar-bg')
 }
+
+
+/* LocalStorage */
+
+const localTheme = (question)=>{
+    localStorage.setItem('darkMode',question)
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+
+    if(localStorage.getItem('darkMode')){
+
+        if(localStorage.getItem('darkMode')=='enable'){
+            
+            changeTheme(DarkTheme)
+        }else if(localStorage.getItem('darkMode')=='disable'){
+
+            changeTheme(LightTheme)
+            listStyle()
+            cont++
+        }
+    }
+})
