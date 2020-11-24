@@ -1,0 +1,30 @@
+.header{
+    &__text{
+        padding-bottom: 1.5em;
+        border-bottom: 1px solid var(--Small-Text);
+    }
+
+    &__title,&__subtitle{
+        margin: 0;
+    }
+
+    &__title{
+        color: var(--White-Text);
+        font-size: 1.5em;
+        margin-bottom: .25em;
+    }
+
+    &__subtitle{
+        color: var(--Small-Text);
+    }
+}
+
+@media screen and (min-width:1024px){
+    .header{
+        position: relative;
+
+        &__text{
+            border-bottom: none;
+        }
+    }
+}

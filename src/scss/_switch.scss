@@ -1,0 +1,56 @@
+.switch{
+    display: flex;
+    align-items: center;
+
+    margin-top: .5em;
+
+    &__text{
+        color: var(--Small-Text);
+    }
+
+    &__bar{
+        width: 50px;
+        height: 25px;
+        position: relative;
+        margin-left: auto;
+
+        border-radius: 1000px;
+
+        background-image: linear-gradient(to right, var(--Toogle));
+        cursor: pointer;
+    }
+    &__circle{
+        position: absolute;
+        bottom: 2.5px;
+        left: 2.5px;
+
+        width: 22px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--Background);
+        transition: all 1s;
+    }
+}
+
+.active{
+    &__bar{
+        background-image: none;
+        background-color: var(--Toogle);
+    }
+
+    &__circle{
+        transform: translateX(22.5px);
+    }
+}
+
+@media screen and (min-width:1024px){
+    .switch{
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &__bar{
+            margin-left: 1em;
+        }
+    }
+}

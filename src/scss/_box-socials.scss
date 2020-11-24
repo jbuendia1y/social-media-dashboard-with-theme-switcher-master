@@ -1,0 +1,100 @@
+.boxSocials{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1em;
+    justify-content: center;
+
+    margin-top: 1.5em;
+
+    &__item{
+        @include centerFlex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--BackgroundCard);
+
+        padding-top: 2em;
+        padding-bottom: 1em;
+
+        border: none;
+        border-top: 7px solid;
+        border-radius: 5px;
+
+        &:nth-child(1){
+            border-color: var(--Facebook);
+        }
+        &:nth-child(2){
+            border-color: var(--Twitter);
+        }
+        &:nth-child(3){
+            border: transparent;
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 7px;
+                background-image: linear-gradient(to right,var(--Instagram));
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                top: 0;
+            }
+        }
+        &:nth-child(4){
+            border-color: var(--YouTube);
+        }
+    }
+
+    &__user{
+        @include centerFlex;
+        text-decoration: none;
+        color: var(--Small-Text);
+    }
+
+    &__social{
+        margin-right: .5em;
+    }
+
+    &__stats{
+        @include centerFlex;
+        flex-direction: column;
+
+        &-bold{
+            font-size: 4em;
+            font-weight: 700;
+            color: var(--White-Text);
+        }
+
+        &-spaced{
+            color: var(--Small-Text);
+            font-size: 1.25em;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;   
+        }
+
+        &-red,&-green{
+            margin-top: 1.5em;
+        }
+
+        &-red{
+            color: var(--BrightRed);
+        }
+        &-green{
+            color: var(--LimeGreen);
+        }
+    }
+
+}
+
+@media screen and (min-width:1024px){
+    .boxSocials{
+        grid-template-columns: repeat(4,24%);
+        grid-row-gap: unset;
+        grid-column-gap: 1em;
+    }
+}
+
+@media screen and (min-width:1440px){
+    .boxSocials{
+        grid-template-rows: 225px;
+    }
+}

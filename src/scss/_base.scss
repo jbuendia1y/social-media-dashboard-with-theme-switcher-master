@@ -1,0 +1,39 @@
+
+body{
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+
+    background-image: linear-gradient(var(--BackgroundTop), var(--Background));
+
+    min-width: 360px;
+}
+
+.red{
+    color: var(--BrightRed);
+}
+
+.green{
+    color: var(--LimeGreen);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width:1024px){
+    .attribution{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media screen and (min-width:1440px){
+    body{
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
