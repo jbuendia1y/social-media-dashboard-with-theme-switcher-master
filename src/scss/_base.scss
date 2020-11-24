@@ -20,6 +20,12 @@ body{
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media screen and (min-width:1024px){
+    body{
+        display: grid;
+        align-items: center;
+        height: 100vh;
+    }
+
     .attribution{
         position: fixed;
         bottom: 0;
@@ -29,8 +35,6 @@ body{
 
 @media screen and (min-width:1440px){
     body{
-        height: 100vh;
-
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -13,6 +13,7 @@
   --BackgroundCard: hsl(228, 28%, 20%);
   --Small-Text: hsl(228, 34%, 66%);
   --White-Text: hsl(0, 0%, 100%);
+  --HoverCard: hsl(229, 28%, 29%);
   /* LightTeme */
   /* --Toogle: hsl(230, 22%, 74%);
 
@@ -21,6 +22,7 @@
     --Light-Grayish-BlueCardBG: hsl(227, 47%, 96%);
     --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
     --Very-Dark-Blue-Text: hsl(230, 17%, 14%); */
+  /* --Hover:hsl(229, 9%, 75%); */
 }
 
 body {
@@ -49,8 +51,15 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+  }
   .attribution {
-    /* margin-top: auto; */
     position: fixed;
     bottom: 0;
     right: 0;
@@ -59,7 +68,6 @@ body {
 
 @media screen and (min-width: 1440px) {
   body {
-    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -151,9 +159,20 @@ body {
   transition: all 1s;
 }
 
+.switch__hover:hover .switch__text {
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  color: var(--White-Text);
+}
+
 .active__bar {
   background-image: none;
   background-color: var(--Toogle);
+}
+
+.active__bar-bg:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background-image: linear-gradient(to right, #378fe6, #3eda82);
 }
 
 .active__circle {
@@ -235,6 +254,11 @@ body {
   border-color: var(--YouTube);
 }
 
+.boxSocials__item:hover {
+  cursor: pointer;
+  background-color: var(--HoverCard);
+}
+
 .boxSocials__user {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,6 +301,12 @@ body {
 }
 
 .boxSocials__stats-red, .boxSocials__stats-green {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 1.5em;
 }
 
@@ -286,6 +316,10 @@ body {
 
 .boxSocials__stats-green {
   color: var(--LimeGreen);
+}
+
+.boxSocials__up, .boxSocials__down {
+  margin-right: .5em;
 }
 
 @media screen and (min-width: 1024px) {
@@ -330,6 +364,7 @@ body {
           flex-direction: column;
   background-color: var(--BackgroundCard);
   padding: .5em 2.5em;
+  border-radius: 5px;
 }
 
 .stats-box__item-top {
@@ -339,6 +374,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.stats-box__item:hover {
+  cursor: pointer;
+  background-color: var(--HoverCard);
 }
 
 .stats-box__title {
@@ -366,6 +406,19 @@ body {
   font-size: 2em;
   font-weight: 700;
   margin-right: auto;
+}
+
+.stats-box__numbers-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stats-box__up, .stats-box__down {
+  margin-right: .5em;
 }
 
 @media screen and (min-width: 1024px) {

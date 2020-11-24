@@ -30,16 +30,31 @@
         background-color: var(--Background);
         transition: all 1s;
     }
+
+    &__hover{
+        &:hover{
+            .switch__text{
+                transition: 1s all;
+                color: var(--White-Text);
+            }
+        }
+    }
 }
 
 .active{
     &__bar{
         background-image: none;
         background-color: var(--Toogle);
+
+        &-bg{
+            &:hover{
+                background-image: linear-gradient(to right,hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+            }
+        }
     }
 
     &__circle{
-        transform: translateX(22.5px);
+        transform: translateX(22.5px);   
     }
 }
 

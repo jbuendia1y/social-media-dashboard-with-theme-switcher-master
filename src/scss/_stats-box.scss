@@ -16,9 +16,16 @@
             background-color: var(--BackgroundCard);
             padding: .5em 2.5em;
 
+            border-radius: 5px;
+
             &-top{
                 display: flex;
                 align-items: center;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: var(--HoverCard);
             }
         }
 
@@ -42,6 +49,13 @@
                 font-weight: 700;
                 margin-right: auto;
             }
+            &-right{
+                @include centerFlex;
+            }
+        }
+
+        &__up,&__down{
+            margin-right: .5em;
         }
     }
 }
